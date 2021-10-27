@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zyp.dbe.mapper.GradesMapper">
+
+    <select id="getGradesList" resultType="com.zyp.dbe.pojo.Grades">
+        select * from databaseex.grades
+    </select>
+
+    <select id="getGradesById" resultType="com.zyp.dbe.pojo.Grades" parameterType="int">
+        select * from databaseex.grades where studentID = #{studentID}
+    </select>
+
+    <insert id="addGrades" parameterType="com.zyp.dbe.pojo.Grades">
+        insert into databaseex.grades (studentID,courseID,grade) values (#{studentID},#{courseID},#{grade})
+    </insert>
+
+    <update id="updateGrades" parameterType="com.zyp.dbe.pojo.Grades">
+        update databaseex.grades set studentID = #{courseID}, grade = #{grade} where studentID = #{studentID}
+    </update>
+
+    <delete id="deleteGrades" parameterType="int">
+        delete from databaseex.grades where studentID = #{studentID}
+    </delete>
+
+</mapper>

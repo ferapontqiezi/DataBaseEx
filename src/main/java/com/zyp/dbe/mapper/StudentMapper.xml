@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zyp.dbe.mapper.StudentMapper">
+
+    <select id="getStudentList" resultType="com.zyp.dbe.pojo.Student">
+        select * from databaseex.student
+    </select>
+
+    <select id="getStudentById" resultType="com.zyp.dbe.pojo.Student" parameterType="int">
+        select * from databaseex.student where id = #{id}
+    </select>
+
+    <insert id="addStudent" parameterType="com.zyp.dbe.pojo.Student">
+        insert into databaseex.student (name,id,sex,age,tel,addr,major) values (#{name},#{id},#{sex},#{age},#{tel},#{addr},#{major})
+    </insert>
+
+    <update id="updateStudent" parameterType="com.zyp.dbe.pojo.Student">
+        update databaseex.student set name = #{name}, sex = #{sex}, age = #{age}, tel = #{tel}, addr = #{addr}, major = #{major} where id = #{id}
+    </update>
+
+    <delete id="deleteStudent" parameterType="int">
+        delete from databaseex.student where id = #{id}
+    </delete>
+
+</mapper>

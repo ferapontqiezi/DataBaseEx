@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zyp.dbe.mapper.CourseMapper">
+
+    <select id="getCourseList" resultType="com.zyp.dbe.pojo.Course">
+        select * from databaseex.course
+    </select>
+
+    <select id="getCourseById" resultType="com.zyp.dbe.pojo.Course" parameterType="int">
+        select * from databaseex.course where id = #{id}
+    </select>
+
+    <insert id="addCourse" parameterType="com.zyp.dbe.pojo.Course">
+        insert into databaseex.course (name,id,credit) values (#{name},#{id},#{credit})
+    </insert>
+
+    <update id="updateCourse" parameterType="com.zyp.dbe.pojo.Course">
+        update databaseex.course set name = #{name}, credit = #{credit} where id = #{id}
+    </update>
+
+    <delete id="deleteCourse" parameterType="int">
+        delete from databaseex.course where id = #{id}
+    </delete>
+
+</mapper>
