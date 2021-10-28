@@ -39,6 +39,15 @@ public class GradesController {
     }
 
     @SuppressWarnings("all")
+    short getGradesBySnoAndCno(Map<String, Object> map) {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        GradesMapper mapper = sqlSession.getMapper(GradesMapper.class);
+        Grades grades = mapper.getGradesBySnoAndCno(map);
+        sqlSession.close();
+        return grades.getGrade();
+    }
+
+    @SuppressWarnings("all")
     List<String> getCnoBySno(String Sno) {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         GradesMapper mapper = sqlSession.getMapper(GradesMapper.class);

@@ -7,17 +7,20 @@ package com.zyp.dbe.controller;
  */
 
 import com.zyp.dbe.mapper.StudentMapper;
+import com.zyp.dbe.pojo.Grades;
 import com.zyp.dbe.pojo.Student;
 import com.zyp.dbe.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class StudentController {
+    GradesController gc = new GradesController();
+    CourseController cc = new CourseController();
+
     @SuppressWarnings("all")
     public List<Student> getStudentList() {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
@@ -39,13 +42,48 @@ public class StudentController {
     }
 
     @SuppressWarnings("all")
-    public Student getStudentBySdept(String Sdept) {
+    public List<Student> getStudentBySdept(String Sdept) {
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
-        Student s = mapper.getStudentBySno(Sdept);
+        List<Student> ans = mapper.getStudentBySdept(Sdept);
         sqlSession.commit();
         sqlSession.close();
-        return s;
+        return ans;
+    }
+
+    @SuppressWarnings("all")
+    public List<String> getCourses(String Sno) {
+        Student s = getStudentBySno(Sno);
+        List<String> cnos = gc.getCnoBySno(Sno);
+        List<String> courses = new ArrayList<>();
+        for (String st : cnos) {
+            courses.add(cc.getCourseByCno(st).getCname());
+        }
+        return courses;
+    }
+
+    @SuppressWarnings("all")
+    public String getStudentAverageGrade(String Sno) {
+        List<Grades> grades = gc.getGradesBySno(Sno);
+        short sum = 0;
+        int n = 0;
+        for (Grades grade : grades) {
+            short temp = grade.getGrade();
+            sum += temp;
+            n++;
+        }
+        double ans = sum / n;
+        return String.valueOf(ans);
+    }
+
+    @SuppressWarnings("all")
+    Map<String, String> getCourseAndGrade(String sno) {
+        Map<String, String> ans = new HashMap<String, String>();
+        List<Grades> list = gc.getGradesBySno(sno);
+        for (Grades s : list) {
+            ans.put(cc.getCourseByCno(s.getCno()).getCname(), String.valueOf(s.getGrade()));
+        }
+        return ans;
     }
 
     public void addStudent() {

@@ -28,6 +28,16 @@ public class CourseController {
         return list;
     }
 
+    @SuppressWarnings("all")
+    public Course getCourseByCno(String Cno) {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        CourseMapper mapper = sqlSession.getMapper(CourseMapper.class);
+        Course ans = mapper.getCourseByCno(Cno);
+        sqlSession.commit();
+        sqlSession.close();
+        return ans;
+    }
+
     public void addCourse() {
         try {
             out.println("下面是增添课程信息：");

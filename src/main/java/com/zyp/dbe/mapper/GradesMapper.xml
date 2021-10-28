@@ -13,11 +13,11 @@
         select * from databaseex.sc where Sno = #{Sno}
     </select>
 
-    <select id="getCnoBySno" resultType="com.zyp.dbe.pojo.Grades" parameterType="String">
+    <select id="getCnoBySno" resultType="String" parameterType="String">
         select Cno from databaseex.sc where Sno = #{Sno}
     </select>
 
-    <select id="getSnoByCno" resultType="com.zyp.dbe.pojo.Grades" parameterType="String">
+    <select id="getSnoByCno" resultType="String" parameterType="String">
         select Sno from databaseex.sc where Cno = #{Cno}
     </select>
 

@@ -63,7 +63,7 @@ public class MainApplication {
                     gc.deleteGrades();
                     break;
                 case 13:
-                    tc.getGradeBySdept();
+                    tc.getGradeBySystem();
                     break;
                 case 14:
                     tc.getRankBySdept();
