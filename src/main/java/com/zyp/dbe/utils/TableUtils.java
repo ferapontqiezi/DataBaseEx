@@ -19,7 +19,7 @@ public class TableUtils {
     /**
      * 显示菜单
      */
-    public static void showMenu() {
+    public static void showMenuTable() {
         System.out.println("========学生信息管理系统========");
         System.out.println("| 1.添加学生信息  2.修改学生信息 |");
         System.out.println("| 3.添加课程信息  4.修改课程信息 |");
@@ -33,14 +33,14 @@ public class TableUtils {
         System.out.print("请输入你的选项: ");
     }
 
-    public static void printInfo(int id) {
-        Student s = sc.getStudentById(id);
-        System.out.print("学号: " + s.getId());
-        System.out.print("\t姓名: " + s.getName());
-        System.out.print("\t性别: " + s.getSex());
-        System.out.print("\t年龄: " + s.getAge());
-        System.out.print("\t所在院系: " + s.getDept());
-        System.out.print("\t奖学金: " + s.getScholarship() + "\n");
+    public static void printInfo(String Sno) {
+        Student s = sc.getStudentBySno(Sno);
+        System.out.print("学号: " + s.getSno());
+        System.out.print("\t姓名: " + s.getSname());
+        System.out.print("\t性别: " + s.getSsex());
+        System.out.print("\t年龄: " + s.getSage());
+        System.out.print("\t所在院系: " + s.getSdept());
+        System.out.print("\t奖学金: " + s.getSscholarship() + "\n");
     }
 
 
@@ -61,7 +61,7 @@ public class TableUtils {
             list.add(s.getSsex());
             list.add(String.valueOf(s.getSage()));
             list.add(s.getSdept());
-            list.add(s.getScholarship());
+            list.add(s.getSscholarship());
             l.add(list);
         }
         return l;

@@ -10,18 +10,18 @@ import com.zyp.dbe.controller.CourseController;
 import com.zyp.dbe.controller.GradesController;
 import com.zyp.dbe.controller.StudentController;
 import com.zyp.dbe.controller.TotalController;
-import com.zyp.dbe.view.MenuTable;
+import com.zyp.dbe.utils.TableUtils;
 
 import java.util.Scanner;
 
 public class MainApplication {
     public static void main(String[] args) {
-        MenuTable mt = new MenuTable();
+        TableUtils tu = new TableUtils();
         StudentController sc = new StudentController();
         CourseController cc = new CourseController();
         GradesController gc = new GradesController();
         TotalController tc = new TotalController();
-        mt.showMenuTable();
+        tu.showMenuTable();
         Scanner scanner = new Scanner(System.in);
         int op = scanner.nextInt();
         while (op != 0) {
@@ -60,15 +60,15 @@ public class MainApplication {
                     gc.updateGrades();
                     break;
                 case 12:
-                    gc.updateGrades();
+                    gc.deleteGrades();
                     break;
                 case 13:
-                    tc.getGradeByMajor();
+                    tc.getGradeBySdept();
                     break;
                 default:
                     break;
             }
-            mt.showMenuTable();
+            tu.showMenuTable();
             op = scanner.nextInt();
         }
     }

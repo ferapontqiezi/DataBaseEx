@@ -25,7 +25,7 @@ public interface CourseMapper {
      * @param Cno
      * @return 课程
      */
-    Course getCourseById(String Cno);
+    Course getCourseByCno(String Cno);
 
     /**
      * //添加课程

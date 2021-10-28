@@ -9,17 +9,23 @@ package com.zyp.dbe.mapper;
 import com.zyp.dbe.pojo.Grades;
 
 import java.util.List;
-import java.util.Map;
 
+@SuppressWarnings("all")
 public interface GradesMapper {
 
     List<Grades> getGradesList();
 
-    Grades getGradesBySnoAndCno(Map<String, Object> map);
+    List<Grades> getGradesBySno(String Sno);
+
+    List<String> getCnoBySno(String Sno);
+
+    List<String> getSnoByCno(String Cno);
+
+    Grades getGradesBySnoAndCno(String Sno, String Cno);
 
     int addGrades(Grades grades);
 
     int updateGrades(Grades grades);
 
-    int deleteGrades(int studentID);
+    int deleteGrades(String Sno, String Cno);
 }

@@ -19,18 +19,18 @@ import static java.lang.System.out;
 
 public class TotalController {
 
-    public void getGradeByMajor() {
-        out.println("下面进行根据专业来查询学生成绩信息：");
-        out.println("请输入您要查询的专业：");
+    public void getGradeBySdept() {
+        out.println("下面进行根据院系来查询学生成绩信息：");
+        out.println("请输入您要查询的院系：");
         Scanner scanner = new Scanner(in);
-        String major = scanner.next();
+        String Sdept = scanner.next();
 
         SqlSession sqlSession = MybatisUtils.getSqlSession();
         TotalMapper mapper = sqlSession.getMapper(TotalMapper.class);
-        List<Grades> list = mapper.getGradeByMajor(major);
+        List<Grades> list = mapper.getGradeByMajor(Sdept);
         sqlSession.close();
 
-        out.println("成功查询" + major + "专业的学生成绩：");
+        out.println("成功查询" + Sdept + "专业的学生成绩：");
         for (Grades ele : list) out.println(ele);
         out.println("--------------------------------------");
     }
