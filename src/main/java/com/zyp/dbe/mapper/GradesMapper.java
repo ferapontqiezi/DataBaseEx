@@ -9,12 +9,13 @@ package com.zyp.dbe.mapper;
 import com.zyp.dbe.pojo.Grades;
 
 import java.util.List;
+import java.util.Map;
 
 public interface GradesMapper {
 
     List<Grades> getGradesList();
 
-    Grades getGradesById(int studentID);
+    Grades getGradesBySnoAndCno(Map<String, Object> map);
 
     int addGrades(Grades grades);
 

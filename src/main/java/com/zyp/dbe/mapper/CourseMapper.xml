@@ -9,20 +9,20 @@
         select * from databaseex.course
     </select>
 
-    <select id="getCourseById" resultType="com.zyp.dbe.pojo.Course" parameterType="int">
-        select * from databaseex.course where id = #{id}
+    <select id="getCourseById" resultType="com.zyp.dbe.pojo.Course" parameterType="String">
+        select * from databaseex.course where Cno = #{Cno}
     </select>
 
     <insert id="addCourse" parameterType="com.zyp.dbe.pojo.Course">
-        insert into databaseex.course (name,id,credit) values (#{name},#{id},#{credit})
+        insert into databaseex.course (Cno,Cname,Ccredit) values (#{Cno},#{Cname},#{Ccredit})
     </insert>
 
     <update id="updateCourse" parameterType="com.zyp.dbe.pojo.Course">
-        update databaseex.course set name = #{name}, credit = #{credit} where id = #{id}
+        update databaseex.course set Cname = #{Cname}, Ccredit = #{Ccredit} where Cno = #{Cno}
     </update>
 
-    <delete id="deleteCourse" parameterType="int">
-        delete from databaseex.course where id = #{id}
+    <delete id="deleteCourse" parameterType="String">
+        delete from databaseex.course where Cno = #{Cno}
     </delete>
 
 </mapper>

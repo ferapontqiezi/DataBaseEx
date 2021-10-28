@@ -7,49 +7,49 @@ package com.zyp.dbe.pojo;
  */
 
 public class Grades {
-    int studentID;
-    int courseID;
-    int grade;
+    String Sno;
+    String Cno;
+    short Grade;
 
     public Grades() {
     }
 
-    public Grades(int studentID, int courseID, int grade) {
-        this.studentID = studentID;
-        this.courseID = courseID;
-        this.grade = grade;
+    public Grades(String sno, String cno, short grade) {
+        Sno = sno;
+        Cno = cno;
+        Grade = grade;
     }
 
-    public int getStudentID() {
-        return studentID;
+    public String getSno() {
+        return Sno;
     }
 
-    public void setStudentID(int studentID) {
-        this.studentID = studentID;
+    public void setSno(String sno) {
+        Sno = sno;
     }
 
-    public int getCourseID() {
-        return courseID;
+    public String getCno() {
+        return Cno;
     }
 
-    public void setCourseID(int courseID) {
-        this.courseID = courseID;
+    public void setCno(String cno) {
+        Cno = cno;
     }
 
-    public int getGrade() {
-        return grade;
+    public short getGrade() {
+        return Grade;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public void setGrade(short grade) {
+        Grade = grade;
     }
 
     @Override
     public String toString() {
         return "Grades{" +
-                "studentID='" + studentID + '\'' +
-                ", courseID='" + courseID + '\'' +
-                ", grade=" + grade +
+                "Sno='" + Sno + '\'' +
+                ", Cno='" + Cno + '\'' +
+                ", Grade=" + Grade +
                 '}';
     }
 }

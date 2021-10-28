@@ -7,93 +7,82 @@ package com.zyp.dbe.pojo;
  */
 
 public class Student {
-    String name;
-    int id;
-    String sex;
-    int age;
-    String tel;
-    String addr;
-    String major;
+    String Sno;
+    String Sname;
+    String Ssex;
+    short Sage;
+    String Sdept;
+    String Sscholarship;
 
     public Student() {
     }
 
-    public Student(String name, int id, String sex, int age, String tel, String addr, String major) {
-        this.name = name;
-        this.id = id;
-        this.sex = sex;
-        this.age = age;
-        this.tel = tel;
-        this.addr = addr;
-        this.major = major;
+    public Student(String sno, String sname, String ssex, short sage, String sdept, String sscholarship) {
+        Sno = sno;
+        Sname = sname;
+        Ssex = ssex;
+        Sage = sage;
+        Sdept = sdept;
+        Sscholarship = sscholarship;
     }
 
-    public String getName() {
-        return name;
+    public String getSno() {
+        return Sno;
     }
 
-    public int getId() {
-        return id;
+    public void setSno(String sno) {
+        Sno = sno;
     }
 
-    public String getSex() {
-        return sex;
+    public String getSname() {
+        return Sname;
     }
 
-    public int getAge() {
-        return age;
+    public void setSname(String sname) {
+        Sname = sname;
     }
 
-    public String getTel() {
-        return tel;
+    public String getSsex() {
+        return Ssex;
     }
 
-    public String getAddr() {
-        return addr;
+    public void setSsex(String ssex) {
+        Ssex = ssex;
     }
 
-    public String getMajor() {
-        return major;
+    public short getSage() {
+        return Sage;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSage(short sage) {
+        Sage = sage;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getSdept() {
+        return Sdept;
     }
 
-    public void setSex(String sex) {
-        this.sex = sex;
+    public void setSdept(String sdept) {
+        Sdept = sdept;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getSscholarship() {
+        return Sscholarship;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    public void setAddr(String addr) {
-        this.addr = addr;
-    }
-
-    public void setMajor(String major) {
-        this.major = major;
+    public void setSscholarship(String sscholarship) {
+        Sscholarship = sscholarship;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                ", sex='" + sex + '\'' +
-                ", age=" + age +
-                ", tel='" + tel + '\'' +
-                ", addr='" + addr + '\'' +
-                ", major='" + major + '\'' +
+                "Sno='" + Sno + '\'' +
+                ", Sname='" + Sname + '\'' +
+                ", Ssex='" + Ssex + '\'' +
+                ", Sage=" + Sage +
+                ", Sdept='" + Sdept + '\'' +
+                ", Sscholarship='" + Sscholarship + '\'' +
                 '}';
     }
 }

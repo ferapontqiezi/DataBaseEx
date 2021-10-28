@@ -22,10 +22,10 @@ public interface CourseMapper {
     /**
      * //根据id查询课程
      *
-     * @param id
+     * @param Cno
      * @return 课程
      */
-    Course getCourseById(int id);
+    Course getCourseById(String Cno);
 
     /**
      * //添加课程
@@ -46,8 +46,8 @@ public interface CourseMapper {
     /**
      * //根据id删除课程
      *
-     * @param id
+     * @param Cno
      * @return 删除课程数量
      */
-    int deleteCourse(int id);
+    int deleteCourse(String Cno);
 }

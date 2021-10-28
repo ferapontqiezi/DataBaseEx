@@ -17,6 +17,15 @@ import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class StudentController {
+    public Student getStudentById(int id) {
+        SqlSession sqlSession = MybatisUtils.getSqlSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+        Student s = mapper.getStudentById(id);
+        sqlSession.commit();
+        sqlSession.close();
+        return s;
+    }
+
     public void addStudent() {
         try {
             out.println("下面是增添新生入学信息：");

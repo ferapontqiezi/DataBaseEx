@@ -6,7 +6,7 @@ package com.zyp.dbe.utils;
  * @PackageName: com.zyp.dbe.utils
  */
 
-import com.zyp.dbe.mapper.StudentMapper;
+import com.zyp.dbe.controller.StudentController;
 import com.zyp.dbe.pojo.Student;
 
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.List;
 
 @SuppressWarnings("all")
 public class TableUtils {
-    private static StudentMapper sm = new StudentMapper();
+    private static StudentController sc = new StudentController();
 
     /**
      * 显示菜单
@@ -34,12 +34,12 @@ public class TableUtils {
     }
 
     public static void printInfo(int id) {
-        Student s = sm.getStudentById(id);
+        Student s = sc.getStudentById(id);
         System.out.print("学号: " + s.getId());
         System.out.print("\t姓名: " + s.getName());
-        System.out.print("\t性别: " + s.getSsex());
-        System.out.print("\t年龄: " + s.getSage());
-        System.out.print("\t所在院系: " + s.getSdept());
+        System.out.print("\t性别: " + s.getSex());
+        System.out.print("\t年龄: " + s.getAge());
+        System.out.print("\t所在院系: " + s.getDept());
         System.out.print("\t奖学金: " + s.getScholarship() + "\n");
     }
 

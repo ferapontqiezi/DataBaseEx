@@ -7,52 +7,60 @@ package com.zyp.dbe.pojo;
  */
 
 public class Course {
-    String name;
-    int id;
-    double credit;
+    String Cno;
+    String Cname;
+    String Cpno;
+    short Ccredit;
 
     public Course() {
     }
 
-    public Course(String name, int id, double credit) {
-        this.name = name;
-        this.id = id;
-        this.credit = credit;
+    public Course(String cno, String cname, String cpno, short ccredit) {
+        Cno = cno;
+        Cname = cname;
+        Cpno = cpno;
+        Ccredit = ccredit;
     }
 
-    /**
-     * @return
-     */
-    public String getName() {
-        return name;
+    public String getCno() {
+        return Cno;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCno(String cno) {
+        Cno = cno;
     }
 
-    public int getId() {
-        return id;
+    public String getCname() {
+        return Cname;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCname(String cname) {
+        Cname = cname;
     }
 
-    public double getCredit() {
-        return credit;
+    public String getCpno() {
+        return Cpno;
     }
 
-    public void setCredit(double credit) {
-        this.credit = credit;
+    public void setCpno(String cpno) {
+        Cpno = cpno;
+    }
+
+    public short getCcredit() {
+        return Ccredit;
+    }
+
+    public void setCcredit(short ccredit) {
+        Ccredit = ccredit;
     }
 
     @Override
     public String toString() {
         return "Course{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
-                ", credit=" + credit +
+                "Cno='" + Cno + '\'' +
+                ", Cname='" + Cname + '\'' +
+                ", Cpno='" + Cpno + '\'' +
+                ", Ccredit=" + Ccredit +
                 '}';
     }
 }
