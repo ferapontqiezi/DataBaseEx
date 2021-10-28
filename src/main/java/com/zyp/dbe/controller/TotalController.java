@@ -13,10 +13,11 @@ import com.zyp.dbe.pojo.Course;
 import com.zyp.dbe.pojo.Grades;
 import com.zyp.dbe.pojo.Student;
 import com.zyp.dbe.utils.MybatisUtils;
+import com.zyp.dbe.utils.PrintTableUtils;
+import com.zyp.dbe.utils.TableUtils;
 import org.apache.ibatis.session.SqlSession;
 
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.System.in;
 import static java.lang.System.out;
@@ -24,7 +25,7 @@ import static java.lang.System.out;
 public class TotalController {
 
     public void getGradeBySdept() {
-        List<Short> gradeList = null;
+        List<Short> gradeList = new ArrayList<Short>();
         out.println("下面进行根据院系来查询学生成绩信息：");
         Scanner scanner = new Scanner(in);
         out.println("请输入您要查询的院系：");
@@ -39,7 +40,10 @@ public class TotalController {
         for (Student student : students) {
             String studentName = student.getSname();
             String Sno = student.getSno();
-            Grades grade = m2.getGradesBySnoAndCno(Sno, Cno);
+            Map<String, Object> map = new HashMap<>();
+            map.put("Sno", Sno);
+            map.put("Cno", Cno);
+            Grades grade = m2.getGradesBySnoAndCno(map);
             short tmp = grade.getGrade();
             out.println("成功查询" + Sdept + "院系的课程编号为" + Cno + "的成绩：");
             out.println("姓名为" + studentName + "的同学的课程成绩为：" + tmp);
@@ -78,7 +82,8 @@ public class TotalController {
         CourseMapper m2 = sqlSession.getMapper(CourseMapper.class);
         GradesMapper m3 = sqlSession.getMapper(GradesMapper.class);
         List<Student> students = m1.getStudentBySdept(Sdept);
-        List<List<Course>> courses = null;
+        List<List<String>> l = TableUtils.studentsTo2dList(students);
+        new PrintTableUtils(l).printTable();
         List<List<Grades>> grades = null;
         for (Student student : students) {
             String Sno = student.getSno();
@@ -92,10 +97,7 @@ public class TotalController {
             }
             courses.add(courseList);
         }
-        sqlSession.close();
-
-        int size = students.size();
-        for (int i = 1; i <= size; i++) {
+        for (int i = 1; i <= students.size(); i++) {
             out.println("学生信息：");
             out.println(students.get(i));
             out.println("该学生的选课信息");
@@ -103,6 +105,7 @@ public class TotalController {
             out.println("该学生的成绩信息");
             out.println(grades.get(i));
         }
+        sqlSession.close();
 
         out.println("--------------------------------------");
     }

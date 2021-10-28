@@ -21,7 +21,7 @@
         select Sno from databaseex.sc where Cno = #{Cno}
     </select>
 
-    <select id="getGradesBySnoAndCno" resultType="com.zyp.dbe.pojo.Grades" parameterType="String">
+    <select id="getGradesBySnoAndCno" resultType="com.zyp.dbe.pojo.Grades" parameterType="map">
         select Grade from databaseex.sc where Sno = #{Sno} And Cno = #{Cno}
     </select>
 
@@ -33,7 +33,7 @@
         update databaseex.sc set Grade = #{Grade} where Sno = #{Sno} And Cno = #{Cno}
     </update>
 
-    <delete id="deleteGrades" parameterType="String">
+    <delete id="deleteGrades" parameterType="map">
         delete from databaseex.sc where Sno = #{Sno} And Cno = #{Cno}
     </delete>
 

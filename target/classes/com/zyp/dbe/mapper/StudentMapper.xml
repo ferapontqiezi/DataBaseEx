@@ -9,20 +9,24 @@
         select * from databaseex.student
     </select>
 
-    <select id="getStudentById" resultType="com.zyp.dbe.pojo.Student" parameterType="int">
-        select * from databaseex.student where id = #{id}
+    <select id="getStudentBySno" resultType="com.zyp.dbe.pojo.Student" parameterType="String">
+        select * from databaseex.student where Sno = #{Sno}
+    </select>
+
+    <select id="getStudentBySdept" resultType="com.zyp.dbe.pojo.Student" parameterType="String">
+        select * from databaseex.student where Sdept = #{Sdept}
     </select>
 
     <insert id="addStudent" parameterType="com.zyp.dbe.pojo.Student">
-        insert into databaseex.student (name,id,sex,age,tel,addr,major) values (#{name},#{id},#{sex},#{age},#{tel},#{addr},#{major})
+        insert into databaseex.student (Sno,Sname,Ssex,Sage,Sdept,Sscholarship) values (#{Sno},#{Sname},#{Ssex},#{Sage},#{Sdept},#{Sscholarship})
     </insert>
 
     <update id="updateStudent" parameterType="com.zyp.dbe.pojo.Student">
-        update databaseex.student set name = #{name}, sex = #{sex}, age = #{age}, tel = #{tel}, addr = #{addr}, major = #{major} where id = #{id}
+        update databaseex.student set Sname = #{Sname}, Ssex = #{Ssex}, Sage = #{Sage}, Sdept = #{Sdept}, Sscholarship = #{Sscholarship} where Sno = #{Sno}
     </update>
 
-    <delete id="deleteStudent" parameterType="int">
-        delete from databaseex.student where id = #{id}
+    <delete id="deleteStudent" parameterType="String">
+        delete from databaseex.student where Sno = #{Sno}
     </delete>
 
 </mapper>

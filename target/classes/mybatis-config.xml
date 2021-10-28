@@ -10,7 +10,8 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/databaseex?serverTimezone=UTC&amp;userSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="url"
+                          value="jdbc:mysql://localhost:3306/databaseex?serverTimezone=UTC&amp;userSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
             </dataSource>
@@ -22,6 +23,5 @@
         <mapper resource="com/zyp/dbe/mapper/StudentMapper.xml"/>
         <mapper resource="com/zyp/dbe/mapper/CourseMapper.xml"/>
         <mapper resource="com/zyp/dbe/mapper/GradesMapper.xml"/>
-        <mapper resource="com/zyp/dbe/mapper/TotalMapper.xml"/>
     </mappers>
 </configuration>

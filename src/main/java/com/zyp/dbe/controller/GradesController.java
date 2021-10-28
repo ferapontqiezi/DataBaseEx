@@ -11,7 +11,9 @@ import com.zyp.dbe.pojo.Grades;
 import com.zyp.dbe.utils.MybatisUtils;
 import org.apache.ibatis.session.SqlSession;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import static java.lang.System.in;
@@ -88,12 +90,16 @@ public class GradesController {
             String Sno = scanner.next();
             out.println("请输入课程的编号（1或2位数字）：");
             String Cno = scanner.next();
-            out.print("查询学号为：" + Sno + "的学生的课程编号为" + Cno + "的学生成绩信息：");
+            out.println("查询学号为：" + Sno + "的学生的课程编号为" + Cno + "的学生成绩信息：");
 
             SqlSession sqlSession = MybatisUtils.getSqlSession();
             GradesMapper mapper = sqlSession.getMapper(GradesMapper.class);
-            Grades grades = mapper.getGradesBySnoAndCno(Sno, Cno);
-            out.println(grades);
+            Map<String, Object> map = new HashMap<>();
+            map.put("Sno", Sno);
+            map.put("Cno", Cno);
+            Grades grade = mapper.getGradesBySnoAndCno(map);
+            int ans = grade.getGrade();
+            out.println(ans);
             sqlSession.close();
 
             out.println("成功查询1条数据元组！");
@@ -111,14 +117,14 @@ public class GradesController {
             String Sno = scanner.next();
             out.println("请输入原课程的编号（1或2位数字）：");
             String Cno = scanner.next();
-            out.print("修改学号为：" + Sno + "的学生的课程编号为" + Cno + "的成绩信息：");
+            out.println("修改学号为：" + Sno + "的学生的课程编号为" + Cno + "的成绩信息：");
             out.println("请输入修改后课程的分数：");
             short grade = scanner.nextShort();
 
             SqlSession sqlSession = MybatisUtils.getSqlSession();
             GradesMapper mapper = sqlSession.getMapper(GradesMapper.class);
             int res = mapper.updateGrades(new Grades(Sno, Cno, grade));
-            if (res > 0) out.println("插入成功！");
+            if (res > 0) out.println("修改成功！");
             sqlSession.commit();
             sqlSession.close();
 
@@ -139,7 +145,10 @@ public class GradesController {
 
             SqlSession sqlSession = MybatisUtils.getSqlSession();
             GradesMapper mapper = sqlSession.getMapper(GradesMapper.class);
-            int res = mapper.deleteGrades(Sno, Cno);
+            Map<String, Object> map = new HashMap<>();
+            map.put("Sno", Sno);
+            map.put("Cno", Cno);
+            int res = mapper.deleteGrades(map);
             if (res > 0) out.println("删除成功！");
             sqlSession.commit();
             sqlSession.close();
