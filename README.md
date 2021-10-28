@@ -125,11 +125,11 @@ create table SC(
 
 其中第14号功能逻辑如下：
 
-![](E:\Developer\ide\idea-projects\DataBaseEx\README\TotalController_getRankBySdept.png)
+![](README/TotalController_getRankBySdept.png)
 
 其中第15号功能逻辑如下：
 
-![](E:\Developer\ide\idea-projects\DataBaseEx\README\TotalController_getImformationBySno.png)
+![](README/TotalController_getImformationBySno.png)
 
 ## 预览效果
 
