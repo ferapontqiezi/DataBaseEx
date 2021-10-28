@@ -22,7 +22,7 @@
     </insert>
 
     <update id="updateStudent" parameterType="com.zyp.dbe.pojo.Student">
-        update databaseex.student set Sname = #{Sname}, Ssex = #{Ssex}, Sage = #{Sage}, Sdepth = #{Sdepth}, Sscholarship = #{Sscholarship} where Sno = #{Sno}
+        update databaseex.student set Sname = #{Sname}, Ssex = #{Ssex}, Sage = #{Sage}, Sdept = #{Sdept}, Sscholarship = #{Sscholarship} where Sno = #{Sno}
     </update>
 
     <delete id="deleteStudent" parameterType="String">

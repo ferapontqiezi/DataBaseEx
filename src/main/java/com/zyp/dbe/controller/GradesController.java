@@ -113,7 +113,7 @@ public class GradesController {
             String Cno = scanner.next();
             out.print("修改学号为：" + Sno + "的学生的课程编号为" + Cno + "的成绩信息：");
             out.println("请输入修改后课程的分数：");
-            Short grade = scanner.nextShort();
+            short grade = scanner.nextShort();
 
             SqlSession sqlSession = MybatisUtils.getSqlSession();
             GradesMapper mapper = sqlSession.getMapper(GradesMapper.class);

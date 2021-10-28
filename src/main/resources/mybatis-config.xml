@@ -23,6 +23,5 @@
         <mapper resource="com/zyp/dbe/mapper/StudentMapper.xml"/>
         <mapper resource="com/zyp/dbe/mapper/CourseMapper.xml"/>
         <mapper resource="com/zyp/dbe/mapper/GradesMapper.xml"/>
-        <mapper resource="com/zyp/dbe/mapper/TotalMapper.xml"/>
     </mappers>
 </configuration>

@@ -31,9 +31,9 @@ public interface StudentMapper {
      * //根据院系查询学生
      *
      * @param Sdept
-     * @return 学生
+     * @return 学生列表
      */
-    Student getStudentBySdept(String Sdept);
+    List<Student> getStudentBySdept(String Sdept);
 
     /**
      * //添加学生

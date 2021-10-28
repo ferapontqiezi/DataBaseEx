@@ -6,35 +6,35 @@
 <mapper namespace="com.zyp.dbe.mapper.GradesMapper">
 
     <select id="getGradesList" resultType="com.zyp.dbe.pojo.Grades">
-        select * from databaseex.grades
+        select * from databaseex.sc
     </select>
 
     <select id="getGradesBySno" resultType="com.zyp.dbe.pojo.Grades" parameterType="String">
-        select * from databaseex.grades where Sno = #{Sno}
+        select * from databaseex.sc where Sno = #{Sno}
     </select>
 
     <select id="getCnoBySno" resultType="com.zyp.dbe.pojo.Grades" parameterType="String">
-        select Cno from databaseex.grades where Sno = #{Sno}
+        select Cno from databaseex.sc where Sno = #{Sno}
     </select>
 
     <select id="getSnoByCno" resultType="com.zyp.dbe.pojo.Grades" parameterType="String">
-        select Sno from databaseex.grades where Cno = #{Cno}
+        select Sno from databaseex.sc where Cno = #{Cno}
     </select>
 
     <select id="getGradesBySnoAndCno" resultType="com.zyp.dbe.pojo.Grades" parameterType="String">
-        select Grade from databaseex.grades where Sno = #{Sno} And Cno = #{Cno}
+        select Grade from databaseex.sc where Sno = #{Sno} And Cno = #{Cno}
     </select>
 
     <insert id="addGrades" parameterType="com.zyp.dbe.pojo.Grades">
-        insert into databaseex.grades (Sno,Cno,Grade) values (#{Sno},#{Cno},#{Grade})
+        insert into databaseex.sc (Sno,Cno,Grade) values (#{Sno},#{Cno},#{Grade})
     </insert>
 
     <update id="updateGrades" parameterType="com.zyp.dbe.pojo.Grades">
-        update databaseex.grades set Grade = #{Grade} where Sno = #{Sno} And Cno = #{Cno}
+        update databaseex.sc set Grade = #{Grade} where Sno = #{Sno} And Cno = #{Cno}
     </update>
 
     <delete id="deleteGrades" parameterType="String">
-        delete from databaseex.grades where Sno = #{Sno} And Cno = #{Cno}
+        delete from databaseex.sc where Sno = #{Sno} And Cno = #{Cno}
     </delete>
 
 </mapper>

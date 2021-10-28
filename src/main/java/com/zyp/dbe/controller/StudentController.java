@@ -118,7 +118,7 @@ public class StudentController {
             String Sdept = scanner.next();
             out.println("请输入修改后的学生是否得过奖学金(是/否)：");
             String Sscholarship = scanner.next();
-            out.println("插入数据：" + Sname + " " + Sno + " " + Ssex + " " + Sage + " " + Sdept + " " + Sscholarship);
+            out.println("修改数据：" + Sname + " " + Sno + " " + Ssex + " " + Sage + " " + Sdept + " " + Sscholarship);
 
             SqlSession sqlSession = MybatisUtils.getSqlSession();
             StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);

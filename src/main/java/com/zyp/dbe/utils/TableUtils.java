@@ -21,14 +21,16 @@ public class TableUtils {
      */
     public static void showMenuTable() {
         System.out.println("========学生信息管理系统========");
-        System.out.println("| 1.添加学生信息  2.修改学生信息 |");
-        System.out.println("| 3.添加课程信息  4.修改课程信息 |");
-        System.out.println("| 5.查看学生信息  6.查询学生绩点 |");
-        System.out.println("| 7.录入学生成绩  8.更改学生成绩 |");
-        System.out.println("| 9.按系查询某课程所有的信息     |");
-        System.out.println("| 10.查询学生的基本信息和选课信息 |");
-        System.out.println("| 11.按系对学生成绩进行排名      |");
-        System.out.println("| 0.退出本学生管理系统          |");
+        System.out.println("| 1.添加学生信息  2.查询学生信息  |");
+        System.out.println("| 3.修改学生信息  4.删除学生信息  |");
+        System.out.println("| 5.添加课程信息  6.查询课程信息  |");
+        System.out.println("| 7.修改课程信息  8.删除课程信息  |");
+        System.out.println("| 9.录入学生信息  10.查询学生绩点 |");
+        System.out.println("| 11.修改学生成绩 12.删除学生成绩 |");
+        System.out.println("| 13.按系查询某课程所有的成绩信息  |");
+        System.out.println("| 14.按系对学生成绩进行排名附信息  |");
+        System.out.println("| 15.按学号显示学生信息和选课信息  |");
+        System.out.println("| 0.退出本学生管理系统           |");
         System.out.println("=============================");
         System.out.print("请输入你的选项: ");
     }

@@ -65,6 +65,13 @@ public class MainApplication {
                 case 13:
                     tc.getGradeBySdept();
                     break;
+                case 14:
+                    tc.getRankBySdept();
+                    break;
+                case 15:
+                    tc.getImformationBySno();
+                    break;
+
                 default:
                     break;
             }
