@@ -121,6 +121,16 @@ create table SC(
 **其他**
 13.院系学生成绩统计  14.学生成绩排名  15.查询学生基本信息和选课信息  0.退出
 
+## 调用逻辑
+
+其中第14号功能逻辑如下：
+
+![](E:\Developer\ide\idea-projects\DataBaseEx\README\TotalController_getRankBySdept.png)
+
+其中第15号功能逻辑如下：
+
+![](E:\Developer\ide\idea-projects\DataBaseEx\README\TotalController_getImformationBySno.png)
+
 ## 预览效果
 
 功能1
