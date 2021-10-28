@@ -8,6 +8,19 @@
 > * 操作系统：`Windows 10`
 > * 框架：`mybatis 3.5.2`
 
+## 起步配置
+
+mybatis-config.xml中properties修改：
+
+```XML
+driver=com.mysql.cj.jdbc.Driver
+url=
+username=root
+password=
+```
+
+更多mybatis学习请看：[mybatis学习笔记](https://github.com/ferapontqiezi/DataBaseEx/blob/master/mybatis.pdf)
+
 ## 数据库说明
 
 创建三个表：
@@ -107,3 +120,73 @@ create table SC(
 9.录入学生成绩  10.删除学生成绩  11.查询所有学生成绩  12.修改学生成绩
 **其他**
 13.院系学生成绩统计  14.学生成绩排名  15.查询学生基本信息和选课信息  0.退出
+
+## 预览效果
+
+功能1
+
+![](README/1.png)
+
+功能2
+
+![](README/2.png)
+
+功能3
+
+![](README/3.png)
+
+功能4
+
+![](README/4.png)
+
+功能5
+
+![](README/5.png)
+
+功能6
+
+![](README/6.png)
+
+功能7
+
+![](README/7.png)
+
+功能8
+
+![](README/8.png)
+
+功能9
+
+![](README/9.png)
+
+功能10
+
+![](README/10.png)
+
+功能11
+
+![](README/11.png)
+
+功能12
+
+![](README/12.png)
+
+功能13
+
+![](README/13.png)
+
+功能14
+
+![](README/14.png)
+
+功能15
+
+![](README/15.png)
+
+## 总结
+
+万分感谢[@H同学](https://github.com/AHawkeye)的帮助！他写的实验比我有条理多了！[他的数据库repo](https://github.com/AHawkeye/DataBaseLab)
+
+- 写数据库实验记住一定要分层！我没写Service层的接口，导致各种Controller互相调用~~写的实在是麻了~~
+- 要熟练使用Mybatis的使用
+
